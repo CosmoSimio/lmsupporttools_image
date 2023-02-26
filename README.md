@@ -21,7 +21,7 @@ Then deploy the container using command ---
 Docker Hub:
 `https://hub.docker.com/repository/docker/doubledockertaco/lmsupporttools/general`
 
-##Kubernetes Deployment##
+h2.Kubernetes Deployment
 
 You can also deploy this in a kubernetes cluster using the `lmsupporttools-deployment.yaml` file in this repo.
 
