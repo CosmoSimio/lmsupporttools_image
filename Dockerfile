@@ -4,9 +4,9 @@ RUN apt-get update && apt-get install -y wget bind9 bind9utils bind9-doc dnsutil
 
 RUN mkdir -p /etc/bind && wget https://raw.githubusercontent.com/CosmoSimio/lmsupporttools/master/dns-web/conf/named.conf -O /etc/bind/named.conf
 
-RUN wget -nv https://lmsupporttools.s3.us-east-2.amazonaws.com/index.html \
-    && wget -nv https://lmsupporttools.s3.us-east-2.amazonaws.com/abcgcalculator.html \
-    && wget -nv https://lmsupporttools.s3.us-east-2.amazonaws.com/dynamicthresholdscalculator.html \
+RUN wget -nv https://raw.githubusercontent.com/CosmoSimio/lmsupporttools/master/html/index.html \
+    && wget -nv https://raw.githubusercontent.com/CosmoSimio/lmsupporttools/master/html/abcgcalculator.html \
+    && wget -nv https://raw.githubusercontent.com/CosmoSimio/lmsupporttools/master/html/dynamicthresholdscalculator.html \
     && mkdir -p /usr/share/nginx/html \
     && mv index.html /usr/share/nginx/html \
     && mv abcgcalculator.html /usr/share/nginx/html \
