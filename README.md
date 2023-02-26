@@ -20,3 +20,18 @@ Then deploy the container using command ---
 
 Docker Hub:
 `https://hub.docker.com/repository/docker/doubledockertaco/lmsupporttools/general`
+
+##Kubernetes Deployment##
+
+You can also deploy this in a kubernetes cluster using the `lmsupporttools-deployment.yaml` file in this repo.
+
+To install in your cluster run command ---
+
+`kubectl apply -f lmsupporttools-deployment.yaml`
+
+When the pod is in a `Running` status, the following command will output the URL of the `lmsupporttools` service ---
+
+`kubectl get service lmsupporttools -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'`
+
+You can copy/paste the URL in your web browser to view the LM Support Tools portal.
+
