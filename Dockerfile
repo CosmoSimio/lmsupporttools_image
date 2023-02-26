@@ -2,9 +2,7 @@ FROM nginx:latest
 
 RUN apt-get update && apt-get install -y wget bind9 bind9utils bind9-doc dnsutils && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /etc/bind/conf && wget https://github.com/CosmoSimio/lmsupporttools/raw/master/dns-web/conf/named.conf -O /etc/bind/named.conf \
-    && wget https://github.com/CosmoSimio/lmsupporttools/raw/master/dns-web/conf/lmsupporttools.com.db -O /etc/bind/conf/lmsupporttools.com.db \
-    && wget https://github.com/CosmoSimio/lmsupporttools/raw/master/dns-web/conf/lmsupporttools.zone -O /etc/bind/conf/lmsupporttools.zone
+RUN mkdir -p /etc/bind && wget https://raw.githubusercontent.com/CosmoSimio/lmsupporttools/master/dns-web/conf/named.conf -O /etc/bind/named.conf
 
 RUN wget -nv https://lmsupporttools.s3.us-east-2.amazonaws.com/index.html \
     && wget -nv https://lmsupporttools.s3.us-east-2.amazonaws.com/abcgcalculator.html \
