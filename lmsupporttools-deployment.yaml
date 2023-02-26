@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lmsupporttools-deployment
+  labels:
+    app: lmsupporttools
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lmsupporttools
+  template:
+    metadata:
+      labels:
+        app: lmsupporttools
+    spec:
+      containers:
+      - name: lmsupporttools
+        image: doubledockertaco/lmsupporttools:latest
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
