@@ -19,7 +19,7 @@ Then deploy the container using command ---
 `docker run -d --name lmsupporttools -p 53:53/tcp -p 53:53/udp -p 80:80 doubledockertaco/lmsupporttools:latest`
 
 Docker Hub:
-`https://hub.docker.com/repository/docker/doubledockertaco/lmsupporttools/general`
+https://hub.docker.com/repository/docker/doubledockertaco/lmsupporttools/general
 
 <h2>Kubernetes Deployment</h2>
 
